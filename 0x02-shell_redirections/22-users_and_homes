@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Hello, World"
+cut -d ":" -f 5,6
