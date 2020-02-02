@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Hello, World"
+grep -c "bin" /etc/passwd
