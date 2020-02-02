@@ -1,0 +1,2 @@
+#!/bin/bash
+catcut -d ":" -f 5,6 | sort
