@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script is displaying IP from apache logs
 file="apache-access.log"
-awk '{print NR,$1, $9}' $file
+awk '{print $1, $9}' $file | sort | uniq -c | sort -nr
