@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script is displaying the content of the file /etc/passwd
+data="/etc/passwd"
+IFS=:
+while read -r USERNAME Password User_ID GROUP_ID User_ID_Info Home com_shell
+do
+    echo "The user $USERNAME is part of the $GROUP_ID gang, lives in $Home and rides $com_shell. $User_ID's place is protected by the passcode $Password, more info about the user here: $User_ID_Info"
+done < $data
+
+
