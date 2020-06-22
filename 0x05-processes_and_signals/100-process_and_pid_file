@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times
+sudo touch /var/run/holbertonscript.pid
+sudo bash -c "echo $$ > /var/run/holbertonscript.pid"
+function delterm()
+{
+    echo I hate the kill command
+    sudo rm /var/run/holbertonscript.pid
+}
+
+function delquit()
+{
+    echo Y U no love me?!
+    sudo rm /var/run/holbertonscript.pid
+}
+
+function delint()
+{
+    echo Y U no love me?!
+}
+
+trap delterm SIGTERM
+
+trap delint SIGINT
+
+trap delquit SIGQUIT
+
+while  ((1))
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
