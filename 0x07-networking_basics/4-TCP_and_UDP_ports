@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#this script show network status (listening ports)
+sudo netstat -lp

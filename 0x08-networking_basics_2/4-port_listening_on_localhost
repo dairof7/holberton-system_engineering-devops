@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#this script start listener port 98 on localhost
+sudo nc -l localhost 98
