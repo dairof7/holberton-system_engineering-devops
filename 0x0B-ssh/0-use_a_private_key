@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # connect via ssh using RSA keys
 
-ssh -i ~/.ssh/holberton ubuntu@34.75.88.244
+ssh -i ~/.ssh/holberton ubuntu@35.227.29.60

@@ -1,0 +1,6 @@
+Host*
+GSSAPIClientIdentity yes
+GSSAPIDelegateCredentials no
+HostName 34.75.88.244
+IdentityFile ~/.ssh/holberton
+PasswordAuthentication no
