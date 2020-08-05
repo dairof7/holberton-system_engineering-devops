@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# install ngix server
+# install nginx web server to listen on port 80
 
 sudo apt-get update
 sudo apt-get -y install nginx
+# Listen on port 80
 sudo ufw allow 'Nginx HTTP'
+# create page with the string Holberton School and start nginx
 sudo echo "Holberton School" > /var/www/html/index.html
-sudo service nginx start
+sudo service nginx start 
