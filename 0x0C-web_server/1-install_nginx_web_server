@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # install ngix server
 
 sudo apt-get update
