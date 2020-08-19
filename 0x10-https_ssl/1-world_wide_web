@@ -17,6 +17,3 @@ then
         echo "The subdomain $DOMAIN is a $RECORDTYPE record and points to $IP"
     done
 fi
-
-#DOMAIN=$(dig "$URL" | grep -A1 'ANSWER SECTION:' | tail -1 | cut -d "." -f1)
-#echo "$DOMAIN"
