@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# display information about subdomains.
+
+if [ $# -eq 2 ]
+then
+    URL="$2.$1"
+    IP=$(dig "$URL" | grep -A1 'ANSWER SECTION:' | tail -1 | cut -d$'\t' -f5)
+    RECORDTYPE=$(dig "$URL" | grep -A1 'ANSWER SECTION:' | tail -1 | cut -d$'\t' -f4)
+    echo "The subdomain $2 is a $RECORDTYPE record and points to $IP"
+elif [ $# -eq 1 ]
+then
+    for DOMAIN in 'www' 'lb-01' 'web-01' 'web-02'
+    do
+        URL="$DOMAIN.$1"
+        IP=$(dig "$URL" | grep -A1 'ANSWER SECTION:' | tail -1 | cut -d$'\t' -f5)
+        RECORDTYPE=$(dig "$URL" | grep -A1 'ANSWER SECTION:' | tail -1 | cut -d$'\t' -f4)
+        echo "The subdomain $DOMAIN is a $RECORDTYPE record and points to $IP"
+    done
+fi
+
+#DOMAIN=$(dig "$URL" | grep -A1 'ANSWER SECTION:' | tail -1 | cut -d "." -f1)
+#echo "$DOMAIN"
