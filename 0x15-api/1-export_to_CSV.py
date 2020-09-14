@@ -26,7 +26,7 @@ def store_csv(data):
 
     Args:
         data (list): users and todos
-    """    
+    """
     users = data[0]
     todos = data[1]
     username = users[0]['username']
