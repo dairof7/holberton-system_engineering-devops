@@ -2,9 +2,9 @@
 
 """[task 1, get and save on csv]
 """
+import csv
 import requests
 from sys import argv
-import csv
 
 
 def get_user(id):
