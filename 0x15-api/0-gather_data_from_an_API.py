@@ -20,6 +20,7 @@ def get_user(id):
     todos = requests.get(url + 'todos', params={'userId': id}).json()
     return([name, todos])
 
+
 def show(data):
     name = data[0]
     todos = data[1]
