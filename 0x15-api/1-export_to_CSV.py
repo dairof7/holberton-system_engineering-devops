@@ -16,7 +16,6 @@ def get_user(id):
     url = 'https://jsonplaceholder.typicode.com/'
     users = requests.get(url + 'users', params={'id': id}).json()
     data = {'Id': id}
-    url = 'https://jsonplaceholder.typicode.com/'
     todos = requests.get(url + 'todos', params={'userId': id}).json()
     return([users, todos])
 
@@ -30,7 +29,7 @@ def store_csv(data):
     users = data[0]
     todos = data[1]
     username = users[0]['username']
-    with open(argv[1] + '.csv', 'w') as f:
+    with open(argv[1] + '.csv', 'w', newline='') as f:
         towrite = csv.writer(f, quoting=csv.QUOTE_ALL)
         for task in todos:
             towrite.writerow([task['userId'], username,
