@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""[task 1, get and save on csv]
+"""[task 1, get and save on json]
 """
 import json
 import requests
@@ -12,16 +12,14 @@ def get_user(id):
     Args:
         id (integer: user id]
     """
-    data = {'Id': id}
     url = 'https://jsonplaceholder.typicode.com/'
     users = requests.get(url + 'users', params={'id': id}).json()
-    data = {'Id': id}
     todos = requests.get(url + 'todos', params={'userId': id}).json()
     return([users, todos])
 
 
 def store_csv(data):
-    """data to csv
+    """data to json
 
     Args:
         data (list): users and todos

@@ -11,11 +11,9 @@ def get_user(id):
     Args:
         id (integer: user id]
     """
-    data = {'Id': id}
     url = 'https://jsonplaceholder.typicode.com/'
     users = requests.get(url + 'users', params={'id': id}).json()
     name = users[0]['name']
-    data = {'Id': id}
     url = 'https://jsonplaceholder.typicode.com/'
     todos = requests.get(url + 'todos', params={'userId': id}).json()
     return([name, todos])
