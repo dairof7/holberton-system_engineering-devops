@@ -17,9 +17,9 @@ def recurse(subreddit, hot_list=[], after=None):
     info = requests.get(url, headers={"User-Agent": "dairof7"},
                         allow_redirects=False,
                         params={'after': after})
-    after = info.json()['data']['after']
 
     if info.status_code == 200:
+        after = info.json()['data']['after']
         if after is None:
             return hot_list
 
