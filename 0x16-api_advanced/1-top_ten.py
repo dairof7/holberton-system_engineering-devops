@@ -20,7 +20,7 @@ def top_ten(subreddit):
         for post in about_info.json()['data']['children']:
             print(post['data']['title'])
     else:
-        return None
+        print(None)
 
 
 if __name__ == "__main__":
