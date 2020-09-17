@@ -32,7 +32,7 @@ def count_words(subreddit, word_list, after=None, count={}):
             for word in word_list:
                 string = post['data']['title']
                 string_split = string.lower().split(' ')
-                count[word] += string_split.count(word)
+                count[word] += string_split.count(word.lower())
         return count_words(subreddit, word_list, after, count)
     else:
         return None
