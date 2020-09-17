@@ -31,7 +31,8 @@ def count_words(subreddit, word_list, after=None, count={}):
         for post in info.json()['data']['children']:
             for word in word_list:
                 string = post['data']['title']
-                count[word] += string.lower().count(word)
+                string_split = string.lower().split(' ')
+                count[word] += string_split.count(word)
         return count_words(subreddit, word_list, after, count)
     else:
         return None
