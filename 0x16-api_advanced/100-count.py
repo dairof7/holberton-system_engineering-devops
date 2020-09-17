@@ -23,9 +23,10 @@ def count_words(subreddit, word_list, after=None, count={}):
     if info.status_code == 200:
         after = info.json()['data']['after']
         if after is None:
-            for word, value in count.items():
-                if value != 0:
-                    print('{}: {}'.format(word, value))
+            first_sort = sorted(count.items(), key=lambda x: x[0])
+            for k, v in sorted(first_sort, key=lambda x: x[1], reverse=True):
+                if v != 0:
+                    print('{}: {}'.format(k, v))
             return
 
         for post in info.json()['data']['children']:
