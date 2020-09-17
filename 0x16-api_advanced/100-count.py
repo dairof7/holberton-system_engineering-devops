@@ -2,7 +2,6 @@
 
 """[task 2, all the hot post]
 """
-import operator
 import requests
 
 
@@ -24,9 +23,7 @@ def count_words(subreddit, word_list, after=None, count={}):
     if info.status_code == 200:
         after = info.json()['data']['after']
         if after is None:
-            sorted_d = dict(sorted(count.items(),
-                            key=operator.itemgetter(1), reverse=True))
-            for word, value in sorted_d.items():
+            for word, value in count.items():
                 if value != 0:
                     print('{}: {}'.format(word, value))
             return
