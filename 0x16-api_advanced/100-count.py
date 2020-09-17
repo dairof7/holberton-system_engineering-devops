@@ -2,11 +2,10 @@
 
 """[task 2, all the hot post]
 """
-from collections import defaultdict
 import requests
 
 
-def count_words(subreddit, word_list, after=None, count=defaultdict(int)):
+def count_words(subreddit, word_list, after=None, count={}):
     """[print 100 hot post]
 
     Args:
@@ -17,14 +16,16 @@ def count_words(subreddit, word_list, after=None, count=defaultdict(int)):
     info = requests.get(url, headers={"User-Agent": "dairof7"},
                         allow_redirects=False,
                         params={'after': after})
+    if after is None:
+        for word in word_list:
+            count[word] = 0
 
     if info.status_code == 200:
         after = info.json()['data']['after']
         if after is None:
-            first_sort = sorted(count.items(), key=lambda x: x[0])
-            for k, v in sorted(first_sort, key=lambda x: x[1], reverse=True):
-                if v != 0:
-                    print('{}: {}'.format(k, v))
+            for word, value in count.items():
+                if value != 0:
+                    print('{}: {}'.format(word, value))
             return
 
         for post in info.json()['data']['children']:
