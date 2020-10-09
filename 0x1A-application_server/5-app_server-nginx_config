@@ -30,11 +30,11 @@ server {
                 proxy_pass http://0.0.0.0:5002/api/;
         }
 
-        location = / {
-                proxy_pass http://0.0.0.0:5003/2-hbnb;
+        location / {
+                proxy_pass http://0.0.0.0:5003/;
         }
-        location ~ /static {
-                proxy_pass http://0.0.0.0:5003;
+        location /static {
+                proxy_pass http://0.0.0.0:5003/;
         }
 
 add_header X-Served-By '1564-web-01';
@@ -64,11 +64,11 @@ root /var/www/html;
 
         server_name _;
 
-        location / {
+#        location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
-                try_files $uri $uri/ =404;
-        }
+#                try_files $uri $uri/ =404;
+#        }
 
         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
         #
