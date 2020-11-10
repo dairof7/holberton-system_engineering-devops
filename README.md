@@ -40,4 +40,4 @@ The following project consisted of writing scripts using bash syntax and interpr
 | [0x1B. Web Stack Debugging #4](./0x1B-web_stack_debugging_4) | Benchmarking with ApacheBench |
 
 ## Author :copyright:
-**Dairo Facundo Duarte** - twitter [@dFacundo2](https://twitter.com/dFacundo2) - LinkedIn [Dairo Facundo](www.linkedin.com/in/dairo-facundo)
+**Dairo Facundo Duarte** - twitter [@dFacundo2](https://twitter.com/dFacundo2) - LinkedIn [Dairo Facundo](https://www.linkedin.com/in/dairo-facundo)
